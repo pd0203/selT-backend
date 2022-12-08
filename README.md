@@ -1,9 +1,28 @@
 # selT
 
-입시 예측/진단 서비스
 
+# 서비스 설명 
+- 입시 예측/진단 서비스
+- 수집해둔 입시 데이터 기반으로 유저 내신 성적 기입시 희망 대학교, 학과별 합격률 도출 및 추천 
+
+# DB 설계도 
+![Copacabana](https://user-images.githubusercontent.com/45405912/206368653-7e32529a-e531-4825-a5d0-913ac13ed7d9.png)
+
+# 나의 백엔드 담당 업무 
+- Python의 `BeautifulSoup`과 `pandas`를 활용해 웹 크롤링을 통한 4만개 입시 엑셀 데이터 수집
+- 수집 데이터 기반 유저 내신 성적 기입시 희망 대학교, 학과별 합격률 도출 및 추천 알고리즘 구현
+- 관리자를 위해 입시 및 유저 데이터 관련 CRUD API 구현
+- `DB Diagram`과 `Django ORM`을 통한 DB 시각화 및 모델링 
+- `Gunicorn`, `Nginx`, `EC2`, `RDS`, `Route53`을 통한 서버 배포 
+- `Certbot`으로 let's encrypt 무료 HTTPS 인증서 발급을 통한 HTTPS 배포
+- `Slack`, `Zoom`, `Notion` 등의 협업 툴을 활용한 프로젝트 진행
+
+# 사용 기술 스택
+- Server : Django Rest Framework (Python)
+- Database : MySQL
+- DevOps: EC2, RDS, gunicorn, nginx, Route53
+    
 # 필수 File Directory 구성
-
 ├── manage.py
 ├── myselT
 │ ├── settings.py
@@ -75,13 +94,3 @@
    - python manage.py migrate
 10. 서버 정상 작동 테스트
     - python manage.py runserver
-
-# 로컬에서 EC2 서버 접근 방법
-
-1. 터미널 상에서 다운 받은 copacabana.pem라는 key file이 위치한 폴더 디렉토리로 이동
-   - ex) cd Desktop/Copacabana
-2. 해당 key file 보안 완화
-   - chmod 400 copacabana.pem
-3. SSH로 프로젝트 코드가 담긴 EC2 서버로 접근
-   - ssh -i copacabana.pem ubuntu@3.38.96.132
-4. 코드 확인 가능
