@@ -21,21 +21,6 @@
 - Server : Django Rest Framework (Python)
 - Database : MySQL
 - DevOps: EC2, RDS, gunicorn, nginx, Route53
-    
-# 필수 File Directory 구성
-├── manage.py
-├── myselT
-│ ├── settings.py
-│ ├── urls.py
-├── requirements.txt  
-├── .env
-└── selT
-├── adapters.py
-├── admin.py
-├── models.py
-├── serializers.py
-├── urls.py
-└── views.py
 
 # 각 폴더/파일 설명
 
